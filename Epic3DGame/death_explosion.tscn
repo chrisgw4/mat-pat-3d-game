@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://djtugmy5jjynu"]
+
+[ext_resource type="Script" path="res://death_explosion.gd" id="1_tdgt4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ebqyd"]
+direction = Vector3(2.08165e-12, 1, 2.08165e-12)
+spread = 100.0
+gravity = Vector3(2.08165e-12, -80, 2.08165e-12)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+scale_min = 0.1
+scale_max = 0.3
+color = Color(1, 0, 0.196078, 1)
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_if7si"]
+albedo_color = Color(1, 0, 0.180392, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6nh4i"]
+material = SubResource("StandardMaterial3D_if7si")
+
+[node name="DeathExplosion" type="GPUParticles3D"]
+amount = 128
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ebqyd")
+draw_pass_1 = SubResource("BoxMesh_6nh4i")
+script = ExtResource("1_tdgt4")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpwo03apnwblr"]
+
+[ext_resource type="Script" path="res://bullet_lifetime_end.gd" id="1_35xmm"]
+
+[sub_resource type="Gradient" id="Gradient_rwhmt"]
+offsets = PackedFloat32Array(0, 0.48374, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.85098, 0.85098, 0.85098, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mmdnw"]
+gradient = SubResource("Gradient_rwhmt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7cd2r"]
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+spread = 180.0
+gravity = Vector3(2.08165e-12, -4, 2.08165e-12)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+scale_min = 0.07
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_mmdnw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uskjq"]
+albedo_color = Color(0.556863, 1, 0.439216, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_06m63"]
+material = SubResource("StandardMaterial3D_uskjq")
+
+[node name="BulletLifetimeEnd" type="GPUParticles3D"]
+amount = 128
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_7cd2r")
+draw_pass_1 = SubResource("SphereMesh_06m63")
+script = ExtResource("1_35xmm")

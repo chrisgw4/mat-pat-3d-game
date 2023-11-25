@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c14r70babkr7m"]
+
+[ext_resource type="Texture2D" uid="uid://di1n0smna4ph2" path="res://Mat_the_pat.webp" id="1_3eelx"]
+[ext_resource type="Script" path="res://matpat.gd" id="2_arsuw"]
+
+[node name="MatPat" type="Sprite3D"]
+texture = ExtResource("1_3eelx")
+script = ExtResource("2_arsuw")

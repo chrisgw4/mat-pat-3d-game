@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6pk5vnlm61dm"]
+
+[ext_resource type="Script" path="res://block.gd" id="1_82c11"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k6pqp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84pb0"]
+
+[node name="Block" type="StaticBody3D"]
+transform = Transform3D(32, 0, 0, 0, 0.2, 0, 0, 0, 32, 0, 0, 0)
+script = ExtResource("1_82c11")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_k6pqp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_84pb0")
+
+[node name="SpawnPos1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.1225, -0.282017)
+
+[node name="SpawnPos2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.245553, 20.1225, 0.0867467)
+
+[node name="SpawnPos3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201197, 20.1225, 0.301911)
+
+[node name="SpawnPos4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0894853, 20.1225, 0.405953)

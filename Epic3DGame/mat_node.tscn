@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://ct327jngdhedr"]
+
+[ext_resource type="PackedScene" uid="uid://c14r70babkr7m" path="res://mat_pat.tscn" id="1_f0ce8"]
+[ext_resource type="Script" path="res://mat_node.gd" id="1_kwbuw"]
+[ext_resource type="AudioStream" uid="uid://ivytnj5lrlwj" path="res://hello-internet-welcome-to-game-theory.mp3" id="3_sjes2"]
+[ext_resource type="AudioStream" uid="uid://54pj3x63lr0s" path="res://i-need-you-to-help-me-save-the-world.mp3" id="4_p0egr"]
+[ext_resource type="AudioStream" uid="uid://p6cvsm28uueq" path="res://the-world-is-getting-overrun-by-these-cylinders-and-i-need-you-to-protect-me-while-i-discover-the-lore.mp3" id="5_sh4wx"]
+[ext_resource type="AudioStream" uid="uid://3wk3cq4dtde" path="res://use-your-weapon-to-destroy-them.mp3" id="6_2cqi2"]
+[ext_resource type="AudioStream" uid="uid://ittu1e7pwfa1" path="res://the-lore-is-so-clear-now.mp3" id="7_7q6mh"]
+[ext_resource type="AudioStream" uid="uid://c20st8wikp6xd" path="res://oh-my-i-finally-found-the-lore-it-all-connects-back-to-the-five-nights-at-freddys-movie-theyre-all-ai.mp3" id="7_kffw6"]
+[ext_resource type="AudioStream" uid="uid://cbn77h7wc0xg7" path="res://caloriesMatPat.mp3" id="8_j12ug"]
+[ext_resource type="AudioStream" uid="uid://bhwwgc4dxy7tf" path="res://but-thats-just-a-theory-a-game-theory-thanks-for-watching.mp3" id="10_ow4a5"]
+
+[node name="MatNode" type="Node3D"]
+script = ExtResource("1_kwbuw")
+
+[node name="MatPat" parent="." instance=ExtResource("1_f0ce8")]
+flip_h = true
+
+[node name="Start" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("3_sjes2")
+volume_db = -18.0
+autoplay = true
+
+[node name="Help" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("4_p0egr")
+volume_db = -18.0
+
+[node name="Protect" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("5_sh4wx")
+volume_db = -18.0
+
+[node name="Destroy" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("6_2cqi2")
+volume_db = -18.0
+
+[node name="Clear" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("7_7q6mh")
+volume_db = -18.0
+
+[node name="Lore" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("7_kffw6")
+volume_db = -18.0
+
+[node name="Calories" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("8_j12ug")
+volume_db = -18.0
+
+[node name="Theory" type="AudioStreamPlayer3D" parent="MatPat"]
+stream = ExtResource("10_ow4a5")
+volume_db = -18.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72408, 2.1447, 0)
+text = "Hey Guys welcome to Game Theory. "

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn6dklv64op8g"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_ilvq8"]
+[ext_resource type="AudioStream" uid="uid://cnkf1gi414hpo" path="res://pew.mp3" id="2_as2fw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_al38r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g3kxe"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+collision_layer = 0
+script = ExtResource("1_ilvq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_al38r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_g3kxe")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.6, 2.08165e-12)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.6, -1)
+
+[node name="Pew" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_as2fw")
+volume_db = -40.0
